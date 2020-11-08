@@ -1,19 +1,17 @@
 import React, { Component } from 'react'
 import { BrowserRouter, Switch, Route, Link, NavLink } from "react-router-dom"
 
+import Nav from '../Nav'
+
 
 export default class Header extends Component {
    render() {
       return (
          <header>
-            <nav>
-               <li><Link to='/photo'>photo</Link></li>
-               <li><Link to='/paintings'>paintings</Link></li>
-               <li><Link to='/bio'>bio</Link></li>
-               <li><Link to='/links'>links</Link></li>
-               <li><Link to='/contact'>contact</Link></li>
-               <li><a href='https://www.etsy.com/shop/redkatart'>store</a></li>
-            </nav>
+            <h1><Link to='/'>KatarinaOlujic.com</Link></h1>
+            <div className='nav-container'>
+               <Nav/>
+            </div>
          </header>
       )
    }

@@ -1,14 +1,14 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route, Link, NavLink } from "react-router-dom"
-import Style from './SharedStyle.css'
 
+import Home from './components/Home.jsx'
 import Photo from './components/photo/Photo.jsx'
 import Paintings from './components/Paintings.jsx'
 import Bio from './components/Bio.jsx'
 import Links from './components/Links.jsx'
 import Contact from './components/Contact.jsx'
 import Header from './components/Header.jsx'
-
+import './SharedStyle.css'
 class App extends React.Component {
    constructor() {
       super()
@@ -17,11 +17,10 @@ class App extends React.Component {
 
       return (
          <div className="App">
-         
-
-            <Header/>
-
             <Switch>
+               <Route exact path='/'>
+                  <Home />
+               </Route>
                <Route exact path='/photo'>
                   <Photo />
                </Route>
