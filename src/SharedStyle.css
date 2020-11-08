@@ -15,12 +15,23 @@ nav {
    justify-content: space-between;
    
 }
+nav a {
+   opacity: 1;
+}
+nav .active-link img{
+   opacity: 1;
+   border-bottom: .1px rgba(255, 0, 0, 0.219) solid;
+
+}
 nav li {
+   width: 4em;
+   height: 3em;
    list-style: none;
+   
 }
 nav img {
    height: 2em;
-   opacity: .7;
+   opacity: .6;
    transition: .3s;
 }
 nav img:hover {
@@ -30,11 +41,30 @@ nav img:hover {
 
 /* ======HEADER=========== */
 header h1 {
+   height: 0;
    margin: 0;
    padding: 0;
+   text-indent: -9999px;
+}
+#logo {
+   height: 90px;
+   display: block; 
+   text-align: center;
+}
+#logo img {
+   opacity: .7;
+   transition: .6s;
+   height: 100%;
+   margin: 0 auto;
+}
+
+#logo img:hover {
+   opacity: 1;
+   height: 88px;
 }
 header .nav-container {
    width: 40%;
+   margin: 0 auto;
 }
 header a {
    text-decoration: none;

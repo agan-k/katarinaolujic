@@ -13,11 +13,11 @@ export default class Nav extends Component {
       return (
          <div>
             <nav>
-               <li><Link to='/photo'><img src={photo_btn} alt='photo'/></Link></li>
-               <li><Link to='/paintings'><img src={paintings_btn} alt='paintings'/></Link></li>
-               <li><Link to='/bio'><img src={bio_btn} alt='bio'/></Link></li>
-               <li><Link to='/links'><img src={links_btn} alt='links'/></Link></li>
-               <li><Link to='/contact'><img src={contact_btn} alt='contact'/></Link></li>
+               <li><NavLink to='/photo' activeClassName='active-link'><img src={photo_btn} alt='photo'/></NavLink></li>
+               <li><NavLink to='/paintings' activeClassName='active-link'><img src={paintings_btn} alt='paintings' /></NavLink></li>
+               <li><NavLink to='/bio' activeClassName='active-link'><img src={bio_btn} alt='bio'/></NavLink></li>
+               <li><NavLink to='/links' activeClassName='active-link'><img src={links_btn} alt='links'/></NavLink></li>
+               <li><NavLink to='/contact' activeClassName='active-link'><img src={contact_btn} alt='contact'/></NavLink></li>
                <li><a href='https://www.etsy.com/shop/redkatart'><img src={store_btn} alt='store'/></a></li>
             </nav>
          </div>
