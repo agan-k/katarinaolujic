@@ -7,14 +7,15 @@ import Paintings from './components/Paintings.jsx'
 import Bio from './components/Bio.jsx'
 import Links from './components/Links.jsx'
 import Contact from './components/Contact.jsx'
-import Header from './components/Header.jsx'
+
+import photoData from './components/photo/photoData'
 import './SharedStyle.css'
 class App extends React.Component {
    constructor() {
       super()
    }
    render() {
-
+      
       return (
          <div className="App">
             <Switch>
