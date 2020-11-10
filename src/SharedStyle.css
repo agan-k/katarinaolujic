@@ -108,7 +108,8 @@ nav a {
 }
 nav .active-link img{
    opacity: 1;
-   border-bottom: .1px rgba(255, 0, 0, 0.219) solid;
+   /* border-bottom: .1px rgba(255, 0, 0, 0.219) solid; */
+   border-bottom: .1px rgba(255, 255, 255, 0.219) dashed;
 
 }
 nav li {
@@ -187,12 +188,19 @@ header a {
    font-weight: 100;
    color: rgb(153, 153, 153);
    margin: 0 auto;
+   margin-bottom: 1em;
 
 }
 .gallery-img-container {
-   height: 9em;
-   width: 9em;
+   height: 8em;
+   /* width: 9em; */
    padding: .4em;
+}
+.gallery-img-container.sq {
+   width: 8em;
+}
+.gallery-img-container.vc {
+   width: 8em;
 }
 .gallery-img-container img {
    height: 99%;
@@ -205,9 +213,10 @@ header a {
    height: 100%;
 }
 .gallery {
-   width: 90%;
+   width: 80%;
    display: flex;
    flex-wrap: wrap;
    margin: 0 auto;
+   margin-bottom: 5em;
 }
 

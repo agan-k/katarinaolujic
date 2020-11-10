@@ -2,13 +2,11 @@ import React, { Component } from 'react'
 
 import Header from '../Header.jsx'
 
-import Square from './Square'
-import ViewCamer from './ViewCamera'
-import Standard from './Standard'
-import Book from './Book'
+
 import ImageDetail from '../ImageDetail'
 import photoSqData from './photoSqData.js'
 import photoVcData from './photoVcData.js'
+import photoStData from './photoStData.js'
 
 
 export default class Photo extends Component {
@@ -18,7 +16,8 @@ export default class Photo extends Component {
          isShowing: false,
          index: null,
          sq_collection: false,
-         vc_collection: false
+         vc_collection: false,
+         st_collection: false,
       }
       this.baseState = this.state
    }
@@ -37,6 +36,13 @@ export default class Photo extends Component {
          vc_collection: true
       })
    }
+   handleStImageSelect = (item, index) => {
+      this.setState({
+         isShowing: true,
+         index: index,
+         st_collection: true
+      })
+   }
    closeImageDetail = () => {
       this.setState({
          isShowing: false
@@ -45,13 +51,18 @@ export default class Photo extends Component {
    }
    render() {
       const sq_format_collection = photoSqData.map((item, index) =>
-         <div className='gallery-img-container'>
+         <div className='gallery-img-container sq'>
             <img src={item.img} onClick={() => this.handleSqImageSelect(item, index)}/>
          </div>
       )
       const view_camera_collection = photoVcData.map((item, index) =>
-         <div className='gallery-img-container'>
+         <div className='gallery-img-container vc'>
             <img src={item.img} onClick={() => this.handleVcImageSelect(item, index)}/>
+         </div>
+      )
+      const standard_collection = photoStData.map((item, index) =>
+         <div className='gallery-img-container st'>
+            <img src={item.img} onClick={() => this.handleStImageSelect(item, index)}/>
          </div>
       )
 
@@ -86,7 +97,17 @@ export default class Photo extends Component {
             )}
             <div className='35mm-standard wrapper'>
                <p>35mm Standard:</p>
+               <div className='standard gallery'>
+                  {standard_collection}
+               </div>
             </div>
+            {this.state.isShowing && this.state.st_collection && (
+               <ImageDetail
+                  index={this.state.index}
+                  closeImageDetail={this.closeImageDetail}
+                  collection={photoStData}
+               />
+            )}
             <div className='book wrapper'>
                <p>Book 'Silence':</p>
             </div>
