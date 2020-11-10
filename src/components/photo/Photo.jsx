@@ -7,6 +7,7 @@ import ImageDetail from '../ImageDetail'
 import photoSqData from './photoSqData.js'
 import photoVcData from './photoVcData.js'
 import photoStData from './photoStData.js'
+import photoBkData from './photoBkData.js'
 
 
 export default class Photo extends Component {
@@ -18,15 +19,16 @@ export default class Photo extends Component {
          sq_collection: false,
          vc_collection: false,
          st_collection: false,
+         book: false,
       }
       this.baseState = this.state
    }
+
    handleSqImageSelect = (item, index) => {
       this.setState({
          isShowing: true,
          index: index,
          sq_collection: true
-         
       })
    }
    handleVcImageSelect = (item, index) => {
@@ -41,6 +43,13 @@ export default class Photo extends Component {
          isShowing: true,
          index: index,
          st_collection: true
+      })
+   }
+   handleBkImageSelect = (item, index) => {
+      this.setState({
+         isShowing: true,
+         index: index,
+         book: true
       })
    }
    closeImageDetail = () => {
@@ -63,6 +72,11 @@ export default class Photo extends Component {
       const standard_collection = photoStData.map((item, index) =>
          <div className='gallery-img-container st'>
             <img src={item.img} onClick={() => this.handleStImageSelect(item, index)}/>
+         </div>
+      )
+      const book = photoBkData.map((item, index) =>
+         <div className='gallery-img-container bk'>
+            <img src={item.img} onClick={() => this.handleBkImageSelect(item, index)}/>
          </div>
       )
 
@@ -110,14 +124,17 @@ export default class Photo extends Component {
             )}
             <div className='book wrapper'>
                <p>Book 'Silence':</p>
+               <div className='book gallery'>
+                  {book[0]}
+               </div>
             </div>
-            {/* {this.state.isShowing && this.state.book_collection && (
+            {this.state.isShowing && this.state.book && (
                <ImageDetail
                   index={this.state.index}
                   closeImageDetail={this.closeImageDetail}
-                  collection={photoBookData}
+                  collection={photoBkData}
                />
-            )} */}
+            )}
          </div>
       )
    }

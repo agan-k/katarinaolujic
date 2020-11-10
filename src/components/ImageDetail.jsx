@@ -53,7 +53,7 @@ export default class ImageDetail extends Component {
                   this.props.collection.indexOf(item) === this.state.count ?
                      <div className='slide'>
                         <img src={item.img} />
-                        <p>{item.caption}</p>
+                        {/* <p>{item.caption}</p> */}
                      </div> : ''
                   )}
 
