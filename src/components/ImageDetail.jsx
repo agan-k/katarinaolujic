@@ -7,6 +7,7 @@ export default class ImageDetail extends Component {
       this.state = {
          count: 0,
       }
+      console.log(props)
    }
    componentDidMount = () => {
       this.setState({
@@ -47,8 +48,9 @@ export default class ImageDetail extends Component {
                   ''   
                }
                </div>
-               {this.props.photoData.map(item => 
-                  this.props.photoData.indexOf(item) === this.state.count ?
+               
+               {this.props.collection.map(item => 
+                  this.props.collection.indexOf(item) === this.state.count ?
                      <div className='slide'>
                         <img src={item.img} />
                         <p>{item.caption}</p>
@@ -57,7 +59,7 @@ export default class ImageDetail extends Component {
 
 
                <div className='arrow-box next'>
-                  {this.state.count !== this.props.photoData.length - 1 ?
+                  {this.state.count !== this.props.collection.length - 1 ?
                   <NextArrow nextImage={this.nextImage} /> : ''    
                }
                </div>

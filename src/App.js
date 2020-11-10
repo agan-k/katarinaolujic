@@ -8,7 +8,6 @@ import Bio from './components/Bio.jsx'
 import Links from './components/Links.jsx'
 import Contact from './components/Contact.jsx'
 
-import photoData from './components/photo/photoData'
 import './SharedStyle.css'
 class App extends React.Component {
    constructor() {
