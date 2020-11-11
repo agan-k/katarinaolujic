@@ -9,7 +9,8 @@ body {
    height: 100%;
    margin: 0;
    /* background-color: black; */
-   color: white;
+   color: rgb(153, 153, 153);
+   font-family: 'Josefin Slab', serif;
 }
 /* ======SHARED=========== */
 /* +++IMAGE DETAIL++++ */
@@ -35,18 +36,21 @@ body {
 }
 .image-detail {
    width: 100%;
+   height: 700px;
    display: flex;
-   margin: 2em auto;
-   /* background-color: grey; */
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
 }
 .slide {
    height: min-content;
-   /* width: min-content; */
-   margin: 1em auto;
+   width: min-content;
+   margin: 0 auto;
 }
-/* .slide img {
-   height: 80vh;
-} */
+.slide img {
+  max-width: 900px;
+  max-height: 600px;
+}
 .image-detail img {
    animation: 1s ease-in-out fadeIn;
 }
@@ -59,13 +63,11 @@ body {
    min-width: 20em;
 }
 .arrow-box {
-   display: inline-block;
-   width: 5em;
    font-size: 3em;
    font-weight: 100;
    color: rgb(172, 172, 172);
-   margin: 0 2em;
-   padding-top: 18%;
+   margin: 0 1em;
+   z-index: 999;
  }
 .arrow-box.next {
    text-align: right;
@@ -98,9 +100,9 @@ body {
 }
 /* =+++++++++++++++++ */
 
-.container {
+/* .container {
    height: 100%;
-}
+} */
 /* ======NAV=========== */
 nav {
    width: 100%;
@@ -181,27 +183,23 @@ header a {
    text-align: center;
    margin: 0 auto;
 }
-/* ======PHOTO=========== */
+/* ======PHOTO && PAINTINGS=========== */
 
 .wrapper {
    height: min-content;
    width: 100%;
 }
-.square-format.wrapper {
+.wrapper {
    margin-top: 5em;
 }
 .wrapper p {
    width: 90%;
-   font-family: 'Josefin Slab', serif;
    font-size: 1.5em;
-   font-weight: 100;
-   color: rgb(153, 153, 153);
    margin: 0 auto;
    margin-bottom: 1em;
 }
 .gallery-img-container {
    height: 8em;
-   /* width: 9em; */
    padding: .4em;
 }
 .gallery-img-container.sq {
@@ -216,14 +214,13 @@ header a {
 }
 
 .gallery-img-container img {
-   height: 99%;
-   opacity: .7;
+   height: 100%;
+   opacity: .8;
    cursor: pointer;
    transition: .2s;
 }
 .gallery-img-container img:hover {
    opacity: 1;
-   height: 100%;
 }
 .gallery {
    width: 80%;
@@ -232,7 +229,33 @@ header a {
    margin: 0 auto;
    margin-bottom: 5em;
 }
+.standard.gallery {
+   justify-content: space-around;
+}
+.paintings.gallery {
+   justify-content: space-around;
+}
 .gallery.book {
    margin-bottom: 10em;
+}
+/* ======= BIO ======== */
+.bio p {
+   font-size: 1.1em;
+   margin: 2em 0;
+}
+.bio.wrapper {
+   display: flex;
+   width: 90%;
+}
+.bio ul li {
+   font-size: 1.1em;
+   list-style: none;
+   padding: .2em;
+}
+.bio h2 {
+   font-size: 1.2em;
+}
+.gallery.bio img {
+   height: 4em;
 }
 
