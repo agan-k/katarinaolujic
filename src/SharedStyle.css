@@ -12,6 +12,17 @@ body {
    color: rgb(153, 153, 153);
    font-family: 'Josefin Slab', serif;
 }
+.App a {
+   color: rgba(251, 255, 0, 0.246);
+   text-decoration: none;
+   transition: 1s;
+}
+.App a:hover {
+   color: white;
+}
+.App h2 {
+   font-size: 1.2em;
+}
 /* ======SHARED=========== */
 /* +++IMAGE DETAIL++++ */
 @keyframes fadeIn {
@@ -256,9 +267,7 @@ header a {
    list-style: none;
    padding: .2em;
 }
-.bio h2 {
-   font-size: 1.2em;
-}
+
 .gallery.bio img {
    height: 4em;
 }
@@ -277,4 +286,15 @@ header a {
 .thumbnail img:hover {
    opacity: 1;
 }
+/* ++++++LINKS++++++ */
+.links.wrapper {
+   width: 40%;
+   margin: 5em auto;
+}
+.contact.wrapper {
+   width: 40%;
+   margin: 5em auto;
+}
+
+
 

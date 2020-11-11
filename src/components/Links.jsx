@@ -8,7 +8,11 @@ export default class Links extends Component {
          <div className='links container'>
             <Header />
             <div className='links wrapper'>
-               <p>Links here</p>
+               <h2>Links:</h2>
+               <p><a href='http://katarinaolujic.com'>KatarinaOlujic.com</a>- legacy site</p>
+               <p><a href='https://www.abelardomorell.net/'>abelardo morell</a>- artist</p>
+               <p><a href='http://www.davidhilliard.com/'>dave hillard</a>- artist</p>
+               <p><a href='https://lauramcphee.com/'>laura mcphee</a>- artist</p>
             </div>
          </div>
       )
