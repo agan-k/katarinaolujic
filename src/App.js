@@ -4,7 +4,7 @@ import { BrowserRouter, Switch, Route, Link, NavLink } from "react-router-dom"
 import Home from './components/Home.jsx'
 import Photo from './components/photo/Photo.jsx'
 import Paintings from './components/Paintings.jsx'
-import Bio from './components/Bio.jsx'
+import Bio from './components/bio/Bio.jsx'
 import Links from './components/Links.jsx'
 import Contact from './components/Contact.jsx'
 

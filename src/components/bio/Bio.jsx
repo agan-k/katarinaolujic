@@ -1,23 +1,45 @@
 import React, { Component } from 'react'
 
-import Header from './Header.jsx'
-import Slide from './Slide'
+import Header from '../Header.jsx'
+import Slide from '../Slide'
 
-import bio_pic from '../assets/photo/square/003.jpg'
-import bioData from './bioData'
-import ImageDetail from './ImageDetail.jsx'
+import exhibitionsData from './exhibitionsData'
+import mag_featureData from './mag_featureData'
+import workData from './workData'
+import ImageDetail from '../ImageDetail.jsx'
+
+import bio_pic from '../../assets/photo/square/003.jpg'
+import make_use from '../../assets/content/publications/make_use_all.jpg'
+
 
 export default class Bio extends Component {
    constructor() {
       super()
       this.state = {
-         bioSlides: true,
+         exhibitions: false,
+         work: false,
+         magFeature: false,
          slideShowing: false,
          imageDetailShowing: false
       }
    }
-   handleSlideSelect = (item, index) => {
+   handleExhSlideSelect = (item, index) => {
       this.setState({
+         exhibitions: true,
+         slideShowing: true,
+         index: index
+      })
+   }
+   handleWrkSlideSelect = (item, index) => {
+      this.setState({
+         work: true,
+         slideShowing: true,
+         index: index
+      })
+   }
+   handleMagSlideSelect = (item, index) => {
+      this.setState({
+         work: true,
          slideShowing: true,
          index: index
       })
@@ -38,9 +60,19 @@ export default class Bio extends Component {
       })
    }
    render() {
-      const bio_slides = bioData.map((item, index) => 
+      const exhibitions_slides = exhibitionsData.map((item, index) => 
          <div className='gallery-img-container bio'>
-            <img src={item.img} onClick={() => this.handleSlideSelect(item, index)}/>
+            <img src={item.img} onClick={() => this.handleExhSlideSelect(item, index)}/>
+         </div>
+         )
+      const work_slides = workData.map((item, index) => 
+         <div className='gallery-img-container bio'>
+            <img src={item.img} onClick={() => this.handleWrkSlideSelect(item, index)}/>
+         </div>
+         )
+      const mag_slides = mag_featureData.map((item, index) => 
+         <div className='gallery-img-container bio'>
+            <img src={item.img} onClick={() => this.handleMagSlideSelect(item, index)}/>
          </div>
          )
       return (
@@ -94,23 +126,58 @@ export default class Bio extends Component {
                      </li>
                   </ul>
                   <div className='gallery bio'>
-                     {bio_slides}
+                     {exhibitions_slides}
                   </div>
-                  {this.state.slideShowing &&
-                     // this.state.sq_collection &&
-                     (
-               <Slide
-                  index={this.state.index}
-                  closeSlide={this.closeSlide}
-                  collection={bioData}
-               />
-            )}
+                  {this.state.slideShowing && this.state.exhibitions && (
+                  <Slide
+                     index={this.state.index}
+                     closeSlide={this.closeSlide}
+                     collection={exhibitionsData}
+                  />
+                  )}
                   <h2>Internship:</h2>
                   <p>
                      Feb-Jun 2003, Know Your Boston Magazine, Boston MA. A monthly event guide and entertainment
                      magazine. She was a staff photographer. Her images appear in four issues of this magazine, and
                      on a front page of the February issue.
                   </p>
+                  <div className='gallery bio'>
+                     {work_slides}
+                  </div>
+                  {this.state.slideShowing && this.state.work && (
+                  <Slide
+                     index={this.state.index}
+                     closeSlide={this.closeSlide}
+                     collection={workData}
+                  />
+                  )}
+                  <h2>Publications:</h2>
+                  <p>
+                     "Make Use" 2006, a collection of photographs, senior photo thesis of graduating class 2006.
+                  </p>
+                  <div className='thumbnail bio'>
+                     <img src={make_use} onClick={() => this.handleOneSelect()} />
+                  </div>
+                  {this.state.imageDetailShowing && (
+                  <ImageDetail
+                     image={make_use}
+                     closeOneSelect={this.closeOneSelect}
+                  />
+                  )}
+                  <h2>Press:</h2>
+                  <p>
+                     "Max Magazine" major Bosnian art and culture magazine, August 2006, featured artist article.
+                  </p>
+                  <div className='gallery bio'>
+                     {mag_slides}
+                  </div>
+                  {this.state.slideShowing && this.state.work && (
+                  <Slide
+                     index={this.state.index}
+                     closeSlide={this.closeSlide}
+                     collection={mag_featureData}
+                  />
+                  )}
                </div>
                
                   
