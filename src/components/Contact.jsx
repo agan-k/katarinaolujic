@@ -5,9 +5,11 @@ import Header from './Header.jsx'
 export default class Contact extends Component {
    render() {
       return (
-         <div>
+         <div className='contact container'>
             <Header />
-            <p>Contact here</p>
+            <div className='contact wrapper'>
+               <p>Contact here</p>
+            </div>
          </div>
       )
    }

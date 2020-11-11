@@ -5,9 +5,11 @@ import Header from './Header.jsx'
 export default class Links extends Component {
    render() {
       return (
-         <div>
+         <div className='links container'>
             <Header />
-            <p>Links here</p>
+            <div className='links wrapper'>
+               <p>Links here</p>
+            </div>
          </div>
       )
    }
