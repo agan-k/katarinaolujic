@@ -1,44 +1,68 @@
 import React, { Component } from 'react'
 
 import Header from './Header.jsx'
-import ImageDetail from './ImageDetail'
+import Slide from './Slide'
 
 import bio_pic from '../assets/photo/square/003.jpg'
 import bioData from './bioData'
+import ImageDetail from './ImageDetail.jsx'
 
 export default class Bio extends Component {
    constructor() {
       super()
       this.state = {
-         isShowing: false
+         bioSlides: true,
+         slideShowing: false,
+         imageDetailShowing: false
       }
    }
-   handleImageSelect = (item, index) => {
+   handleSlideSelect = (item, index) => {
       this.setState({
-         isShowing: true,
+         slideShowing: true,
          index: index
       })
    }
-   closeImageDetail = () => {
+   closeSlide = () => {
       this.setState({
-         isShowing: false
+         slideShowing: false
+      })
+   }
+   handleOneSelect = () => {
+      this.setState({
+         imageDetailShowing: true
+      })
+   }
+   closeOneSelect = () => {
+      this.setState({
+         imageDetailShowing: false
       })
    }
    render() {
       const bio_slides = bioData.map((item, index) => 
          <div className='gallery-img-container bio'>
-            <img src={item.img} onClick={() => this.handleImageSelect(item, index)}/>
+            <img src={item.img} onClick={() => this.handleSlideSelect(item, index)}/>
          </div>
          )
       return (
          <div className='bio container'>
             <Header />
             <div className='bio wrapper'>
-               <img src={bio_pic}
+               <img
+                  onClick={() => this.handleOneSelect()}
+                  src={bio_pic}
                   style={{
                      height: '10em', 
-                     margin: '0 2em 0 10em'
-                  }} />
+                     margin: '0 2em 0 10em',
+                     cursor: 'pointer'
+                  }}
+                  
+               />
+               {this.state.imageDetailShowing && (
+                  <ImageDetail
+                     image={bio_pic}
+                     closeOneSelect={this.closeOneSelect}
+                  />
+               )}
                <div className='info section'>
                   <p>
                      Katarina was born in Derventa, a small town in the northern part of Bosnia-Herzegovina.
@@ -72,12 +96,12 @@ export default class Bio extends Component {
                   <div className='gallery bio'>
                      {bio_slides}
                   </div>
-                  {this.state.isShowing &&
+                  {this.state.slideShowing &&
                      // this.state.sq_collection &&
                      (
-               <ImageDetail
+               <Slide
                   index={this.state.index}
-                  closeImageDetail={this.closeImageDetail}
+                  closeSlide={this.closeSlide}
                   collection={bioData}
                />
             )}

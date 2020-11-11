@@ -1,31 +1,31 @@
 import React, { Component } from 'react'
 
 import Header from './Header'
-import ImageDetail from './ImageDetail'
+import Slide from './Slide'
 import paintingsData from './paintingsData'
 
 export default class Paintings extends Component {
    constructor() {
       super()
       this.state = {
-         isShowing: false
+         slideShowing: false
       }
    }
-   handleImageSelect = (item, index) => {
+   handleSlideSelect = (item, index) => {
       this.setState({
-         isShowing: true,
+         slideShowing: true,
          index: index
       })
    }
-   closeImageDetail = () => {
+   closeSlide = () => {
       this.setState({
-         isShowing: false
+         slideShowing: false
       })
    }
    render() {
       const paintings = paintingsData.map((item, index) => 
          <div className='gallery-img-container paintings'>
-            <img src={item.img} onClick={() => this.handleImageSelect(item, index)}/>
+            <img src={item.img} onClick={() => this.handleSlideSelect(item, index)}/>
          </div>
       )
       return (
@@ -37,10 +37,10 @@ export default class Paintings extends Component {
                   {paintings}
                </div>
             </div>
-            {this.state.isShowing && (
-               <ImageDetail
+            {this.state.slideShowing && (
+               <Slide
                   index={this.state.index}
-                  closeImageDetail={this.closeImageDetail}
+                  closeSlide={this.closeSlide}
                   collection={paintingsData}
                />
             )}

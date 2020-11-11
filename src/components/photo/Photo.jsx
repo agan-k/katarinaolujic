@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 import Header from '../Header.jsx'
 
 
-import ImageDetail from '../ImageDetail'
+import Slide from '../Slide'
 import photoSqData from './photoSqData.js'
 import photoVcData from './photoVcData.js'
 import photoStData from './photoStData.js'
@@ -14,7 +14,7 @@ export default class Photo extends Component {
    constructor(props) {
       super()
       this.state = {
-         isShowing: false,
+         slideShowing: false,
          index: null,
          sq_collection: false,
          vc_collection: false,
@@ -24,59 +24,59 @@ export default class Photo extends Component {
       this.baseState = this.state
    }
 
-   handleSqImageSelect = (item, index) => {
+   handleSqSlideSelect = (item, index) => {
       this.setState({
-         isShowing: true,
+         slideShowing: true,
          index: index,
          sq_collection: true
       })
    }
-   handleVcImageSelect = (item, index) => {
+   handleVcSlideSelect = (item, index) => {
       this.setState({
-         isShowing: true,
+         slideShowing: true,
          index: index,
          vc_collection: true
       })
    }
-   handleStImageSelect = (item, index) => {
+   handleStSlideSelect = (item, index) => {
       this.setState({
-         isShowing: true,
+         slideShowing: true,
          index: index,
          st_collection: true
       })
    }
-   handleBkImageSelect = (item, index) => {
+   handleBkSlideSelect = (item, index) => {
       this.setState({
-         isShowing: true,
+         slideShowing: true,
          index: index,
          book: true
       })
    }
-   closeImageDetail = () => {
+   closeSlide = () => {
       this.setState({
-         isShowing: false
+         slideShowing: false
       })
       this.setState(this.baseState)
    }
    render() {
       const sq_format_collection = photoSqData.map((item, index) =>
          <div className='gallery-img-container sq'>
-            <img src={item.img} onClick={() => this.handleSqImageSelect(item, index)}/>
+            <img src={item.img} onClick={() => this.handleSqSlideSelect(item, index)}/>
          </div>
       )
       const view_camera_collection = photoVcData.map((item, index) =>
          <div className='gallery-img-container vc'>
-            <img src={item.img} onClick={() => this.handleVcImageSelect(item, index)}/>
+            <img src={item.img} onClick={() => this.handleVcSlideSelect(item, index)}/>
          </div>
       )
       const standard_collection = photoStData.map((item, index) =>
          <div className='gallery-img-container st'>
-            <img src={item.img} onClick={() => this.handleStImageSelect(item, index)}/>
+            <img src={item.img} onClick={() => this.handleStSlideSelect(item, index)}/>
          </div>
       )
       const book = photoBkData.map((item, index) =>
          <div className='gallery-img-container bk'>
-            <img src={item.img} onClick={() => this.handleBkImageSelect(item, index)}/>
+            <img src={item.img} onClick={() => this.handleBkSlideSelect(item, index)}/>
          </div>
       )
 
@@ -89,10 +89,10 @@ export default class Photo extends Component {
                   {sq_format_collection}
                </div>
             </div>
-            {this.state.isShowing &&  this.state.sq_collection && (
-               <ImageDetail
+            {this.state.slideShowing &&  this.state.sq_collection && (
+               <Slide
                   index={this.state.index}
-                  closeImageDetail={this.closeImageDetail}
+                  closeSlide={this.closeSlide}
                   collection={photoSqData}
                />
             )}
@@ -102,10 +102,10 @@ export default class Photo extends Component {
                   {view_camera_collection}
                </div>
             </div>
-            {this.state.isShowing && this.state.vc_collection && (
-               <ImageDetail
+            {this.state.slideShowing && this.state.vc_collection && (
+               <Slide
                   index={this.state.index}
-                  closeImageDetail={this.closeImageDetail}
+                  closeSlide={this.closeSlide}
                   collection={photoVcData}
                />
             )}
@@ -115,10 +115,10 @@ export default class Photo extends Component {
                   {standard_collection}
                </div>
             </div>
-            {this.state.isShowing && this.state.st_collection && (
-               <ImageDetail
+            {this.state.slideShowing && this.state.st_collection && (
+               <Slide
                   index={this.state.index}
-                  closeImageDetail={this.closeImageDetail}
+                  closeSlide={this.closeSlide}
                   collection={photoStData}
                />
             )}
@@ -128,10 +128,10 @@ export default class Photo extends Component {
                   {book[0]}
                </div>
             </div>
-            {this.state.isShowing && this.state.book && (
-               <ImageDetail
+            {this.state.slideShowing && this.state.book && (
+               <Slide
                   index={this.state.index}
-                  closeImageDetail={this.closeImageDetail}
+                  closeSlide={this.closeSlide}
                   collection={photoBkData}
                />
             )}
