@@ -23,6 +23,9 @@ export default class Photo extends Component {
       }
       this.baseState = this.state
    }
+   componentDidMount() {
+      window.scrollTo(0, 0);
+   }
 
    handleSqSlideSelect = (item, index) => {
       this.setState({
@@ -83,6 +86,7 @@ export default class Photo extends Component {
       return (
          <div className='photo container'>
             <Header />
+            {/* --------------------------------- */}
             <div className='square-format wrapper'>
                <p>220mm Square Format:</p>
                <div className='sq-format gallery'>
@@ -96,6 +100,21 @@ export default class Photo extends Component {
                   collection={photoSqData}
                />
             )}
+            {/* --------------------------------- */}
+            <div className='book wrapper'>
+               <p>Book 'Silence':</p>
+               <div className='book gallery'>
+                  {book[0]}
+               </div>
+            </div>
+            {this.state.slideShowing && this.state.book && (
+               <Slide
+                  index={this.state.index}
+                  closeSlide={this.closeSlide}
+                  collection={photoBkData}
+               />
+            )}
+            {/* --------------------------------- */}
             <div className='view-camera wrapper'>
                <p>4x5 View Camera:</p>
                <div className='view-camera gallery'>
@@ -109,6 +128,7 @@ export default class Photo extends Component {
                   collection={photoVcData}
                />
             )}
+            {/* --------------------------------- */}
             <div className='35mm-standard wrapper'>
                <p>35mm Standard:</p>
                <div className='standard gallery'>
@@ -120,19 +140,6 @@ export default class Photo extends Component {
                   index={this.state.index}
                   closeSlide={this.closeSlide}
                   collection={photoStData}
-               />
-            )}
-            <div className='book wrapper'>
-               <p>Book 'Silence':</p>
-               <div className='book gallery'>
-                  {book[0]}
-               </div>
-            </div>
-            {this.state.slideShowing && this.state.book && (
-               <Slide
-                  index={this.state.index}
-                  closeSlide={this.closeSlide}
-                  collection={photoBkData}
                />
             )}
          </div>

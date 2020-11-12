@@ -7,6 +7,7 @@ import Paintings from './components/Paintings.jsx'
 import Bio from './components/bio/Bio.jsx'
 import Links from './components/Links.jsx'
 import Contact from './components/Contact.jsx'
+import Footer from './components/Footer'
 
 import './SharedStyle.css'
 class App extends React.Component {
@@ -38,8 +39,10 @@ class App extends React.Component {
                </Route>
                
             </Switch>
+
+            <Footer/>
     
-            
+
         </div>
       )
    }

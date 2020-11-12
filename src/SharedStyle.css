@@ -247,7 +247,7 @@ header a {
    justify-content: space-around;
 }
 .gallery.book {
-   margin-bottom: 10em;
+   /* margin-bottom: 10em; */
 }
 .gallery.bio {
    margin-bottom: 0;
@@ -289,11 +289,14 @@ header a {
 /* ++++++LINKS++++++ */
 .links.wrapper {
    width: 40%;
+   height: 50vh;
    margin: 5em auto;
 }
 .contact.wrapper {
    width: 40%;
+   height: 50vh;
    margin: 5em auto;
+   color: rgb(92, 91, 91);
 }
 
 

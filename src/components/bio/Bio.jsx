@@ -22,6 +22,10 @@ export default class Bio extends Component {
          slideShowing: false,
          imageDetailShowing: false
       }
+      this.baseState = this.state
+   }
+   componentDidMount() {
+      window.scrollTo(0, 0);
    }
    handleExhSlideSelect = (item, index) => {
       this.setState({
@@ -39,7 +43,7 @@ export default class Bio extends Component {
    }
    handleMagSlideSelect = (item, index) => {
       this.setState({
-         work: true,
+         magFeature: true,
          slideShowing: true,
          index: index
       })
@@ -48,6 +52,7 @@ export default class Bio extends Component {
       this.setState({
          slideShowing: false
       })
+      this.setState(this.baseState)
    }
    handleOneSelect = () => {
       this.setState({
@@ -80,21 +85,13 @@ export default class Bio extends Component {
             <Header />
             <div className='bio wrapper'>
                <img
-                  onClick={() => this.handleOneSelect()}
                   src={bio_pic}
                   style={{
                      height: '10em', 
                      margin: '0 2em 0 10em',
                      cursor: 'pointer'
                   }}
-                  
                />
-               {this.state.imageDetailShowing && (
-                  <ImageDetail
-                     image={bio_pic}
-                     closeOneSelect={this.closeOneSelect}
-                  />
-               )}
                <div className='info section'>
                   <p>
                      Katarina was born in Derventa, a small town in the northern part of Bosnia-Herzegovina.
@@ -171,7 +168,7 @@ export default class Bio extends Component {
                   <div className='gallery bio'>
                      {mag_slides}
                   </div>
-                  {this.state.slideShowing && this.state.work && (
+                  {this.state.slideShowing && this.state.magFeature && (
                   <Slide
                      index={this.state.index}
                      closeSlide={this.closeSlide}

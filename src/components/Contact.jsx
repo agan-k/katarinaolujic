@@ -2,7 +2,11 @@ import React, { Component } from 'react'
 
 import Header from './Header.jsx'
 import email from '../assets/content/email.jpg'
+
 export default class Contact extends Component {
+   componentDidMount() {
+      window.scrollTo(0, 0);
+   }
    render() {
       return (
          <div className='contact container'>

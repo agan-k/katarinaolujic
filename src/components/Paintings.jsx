@@ -11,6 +11,9 @@ export default class Paintings extends Component {
          slideShowing: false
       }
    }
+   componentDidMount() {
+      window.scrollTo(0, 0);
+   }
    handleSlideSelect = (item, index) => {
       this.setState({
          slideShowing: true,
