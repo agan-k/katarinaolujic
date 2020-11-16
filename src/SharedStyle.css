@@ -196,7 +196,7 @@ header a {
    width: 100%;
 }
 .section {
-   margin-top: 5em;
+   /* margin-top: 5em; */
 }
 .section p {
    width: 90%;
@@ -252,7 +252,7 @@ header a {
    display: flex;
    flex-wrap: wrap;
    margin: 0 auto;
-   margin-bottom: 5em;
+   /* margin-bottom: 5em; */
 }
 .gallery.paintings {
    justify-content: space-around;
