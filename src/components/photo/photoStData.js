@@ -29,19 +29,22 @@ const photoStData = [
       id: '',
       img: st1,
       caption: 'Caption goes here..',
-      standard_format: true
+      standard_format: true,
+      
    },
    {
       id: '',
       img: st2,
       caption: 'Caption goes here..',
-      standard_format: true
+      standard_format: true,
+      vertical: true
    },
    {
       id: '',
       img: st3,
       caption: 'Caption goes here..',
-      standard_format: true
+      standard_format: true,
+      vertical: true
    },
    {
       id: '',
@@ -53,13 +56,15 @@ const photoStData = [
       id: '',
       img: st5,
       caption: 'Caption goes here..',
-      standard_format: true
+      standard_format: true,
+      vertical: true
    },
    {
       id: '',
       img: st6,
       caption: 'Caption goes here..',
-      standard_format: true
+      standard_format: true,
+      vertical: true
    },
    {
       id: '',
@@ -71,7 +76,8 @@ const photoStData = [
       id: '',
       img: st8,
       caption: 'Caption goes here..',
-      standard_format: true
+      standard_format: true,
+      vertical: true
    },
    {
       id: '',
@@ -83,7 +89,8 @@ const photoStData = [
       id: '',
       img: st10,
       caption: 'Caption goes here..',
-      standard_format: true
+      standard_format: true,
+      vertical: true
    },
    {
       id: '',
@@ -101,7 +108,8 @@ const photoStData = [
       id: '',
       img: st13,
       caption: 'Caption goes here..',
-      standard_format: true
+      standard_format: true,
+      vertical: true
    },
    {
       id: '',
@@ -125,25 +133,29 @@ const photoStData = [
       id: '',
       img: st17,
       caption: 'Caption goes here..',
-      standard_format: true
+      standard_format: true,
+      vertical: true
    },
    {
       id: '',
       img: st18,
       caption: 'Caption goes here..',
-      standard_format: true
+      standard_format: true,
+      vertical: true
    },
    {
       id: '',
       img: st19,
       caption: 'Caption goes here..',
-      standard_format: true
+      standard_format: true,
+      vertical: true
    },
    {
       id: '',
       img: st20,
       caption: 'Caption goes here..',
-      standard_format: true
+      standard_format: true,
+      vertical: true
    },
    {
       id: '',
@@ -167,7 +179,8 @@ const photoStData = [
       id: '',
       img: st24,
       caption: 'Caption goes here..',
-      standard_format: true
+      standard_format: true,
+      vertical: true
    },
 ]
 export default photoStData

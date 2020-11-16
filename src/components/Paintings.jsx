@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
 import Header from './Header'
+import Footer from './Footer'
 import Slide from './Slide'
 import paintingsData from './paintingsData'
 
@@ -27,26 +28,29 @@ export default class Paintings extends Component {
    }
    render() {
       const paintings = paintingsData.map((item, index) => 
-         <div className='gallery-img-container paintings'>
+         <div className='thumbnail-container paintings'>
             <img src={item.img} onClick={() => this.handleSlideSelect(item, index)}/>
          </div>
       )
       return (
-         <div className='paintings-container'>
+         <div>
             <Header/>
-            <div className='paintings wrapper'>
-               <p>Paintings:</p>
-               <div className='paintings gallery'>
-                  {paintings}
+            <div className='paintings-container'>
+               <div className='paintings section'>
+                  <p>Paintings:</p>
+                  <div className='gallery paintings'>
+                     {paintings}
+                  </div>
                </div>
+               {this.state.slideShowing && (
+                  <Slide
+                     index={this.state.index}
+                     closeSlide={this.closeSlide}
+                     collection={paintingsData}
+                  />
+               )}
             </div>
-            {this.state.slideShowing && (
-               <Slide
-                  index={this.state.index}
-                  closeSlide={this.closeSlide}
-                  collection={paintingsData}
-               />
-            )}
+            <Footer />
          </div>
       )
    }

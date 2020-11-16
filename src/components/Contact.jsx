@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 
-import Header from './Header.jsx'
+import Header from './Header'
+import Footer from './Footer'
 import email from '../assets/content/email.jpg'
 
 export default class Contact extends Component {
@@ -9,14 +10,17 @@ export default class Contact extends Component {
    }
    render() {
       return (
-         <div className='contact container'>
+         <div>
             <Header />
-            <div className='contact wrapper'>
-               <h2>To get in touch write to:</h2>
-               <p><img src={email} style={{height: '1.3em'}}/></p>
-               {/* <p><a href='https://www.instagram.com/redkatart/'>instagram</a></p>
-               <p><a href='https://www.instagram.com/redkatart/'>instagram</a></p> */}
+            <div className='contact container'>
+               <div className='contact wrapper'>
+                  <h2>To get in touch write to:</h2>
+                  <p><img src={email} style={{height: '1.9em'}}/></p>
+                  {/* <p><a href='https://www.instagram.com/redkatart/'>instagram</a></p>
+                  <p><a href='https://www.instagram.com/redkatart/'>instagram</a></p> */}
+               </div>
             </div>
+            <Footer />
          </div>
       )
    }
