@@ -1,21 +1,16 @@
 # Description
-# Artist Profile web app
+# Artist Portfolio
 
-DESCRIPTION
-
-# Mockups
-
-
-
-
-
-![](ko1.png)
-![](ko2.png)
-
-
-
+Artist portfolio of [Katarina Olujic](https://katarina-olujic.netlify.app/).
 
 # MVP
 
-Simple navigation trough several pages.
+Access to the Store. Galleries
+
+# Stack
+
+CSS, ReactJS, NextJS, Prismic CMS API.
+![](ko1.png)
+![](ko2.png)
+
 
