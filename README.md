@@ -10,7 +10,12 @@ Access to the Store. Galleries
 # Stack
 
 CSS, ReactJS, NextJS, Prismic CMS API.
+
+
+# Mockups
+
 ![](ko1.png)
+
 ![](ko2.png)
 
 
